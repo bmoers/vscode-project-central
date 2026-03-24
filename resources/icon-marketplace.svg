@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Marketplace icon: stacked folders on branded background -->
+  <rect width="256" height="256" rx="24" fill="#1e1e2e"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1e1e2e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="24" fill="url(#glow)"/>
+  <!-- Scaled activity-bar.svg (viewBox 0 0 24 24 → fit within 256 with padding) -->
+  <g transform="translate(28, 38) scale(8.33)">
+    <!-- Back folder (30% opacity) -->
+    <path d="M5,2.5h5.7l1.7,1.8h10.9v12.2H5V2.5Z" fill="none" stroke="#e0e0e0" stroke-width="1.2" stroke-linejoin="round" opacity="0.3"/>
+    <!-- Middle folder (50% opacity) -->
+    <path d="M3,4.8h5.7l1.7,1.8h10.9v12.2H3V4.8Z" fill="none" stroke="#e0e0e0" stroke-width="1.2" stroke-linejoin="round" opacity="0.5"/>
+    <!-- Front folder (full) -->
+    <path d="M.8,7.4h5.7l1.7,1.8h10.9v12.2H.8V7.4Z" fill="none" stroke="#4fc3f7" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+</svg>

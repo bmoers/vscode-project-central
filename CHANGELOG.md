@@ -1,0 +1,22 @@
+# Changelog
+
+All notable changes to the **Project Central** extension will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
+
+## [0.1.0] - 2026-03-24
+
+### Added
+
+- **Activity Bar view** with dedicated icon for browsing projects
+- **Project scanner** that detects 7 project types: Git, VS Code, IntelliJ, Node.js, Rust, Python, Go
+- **Multiple root folders** — configure several directories to scan, each with its own label, depth, and type filter
+- **Favorites** — star projects for quick access; favorites appear in a dedicated section at the top
+- **Sorting** — sort projects alphabetically (A-Z, Z-A), by usage count, or by last opened
+- **Filtering** — filter the project list by project type
+- **Quick Open** (`Cmd+Alt+P` / `Ctrl+Alt+P`) — fuzzy-search across all projects from anywhere
+- **Usage tracking** — tracks how often and when each project was opened, persisted across sessions
+- **Context menu actions** — Open in New/Current Window, Open in Terminal, Copy Path, Reveal in Finder
+- **Auto-refresh** on configuration changes
+- **Welcome view** with "Add Root Folder" button when no root folders are configured
+- Light and dark theme icons for all project types

@@ -1,0 +1,16 @@
+.vscode/**
+.vscode-test/**
+.claude/**
+.git/**
+.gitignore
+.DS_Store
+src/**
+node_modules/**
+tsconfig.json
+CLAUDE.md
+**/*.map
+**/*.ts
+!dist/**
+*.vsix
+resources/icons/concepts/**
+resources/icon-marketplace.svg

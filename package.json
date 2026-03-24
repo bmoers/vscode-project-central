@@ -1,0 +1,333 @@
+{
+  "name": "project-central",
+  "displayName": "Project Central",
+  "description": "Browse, organize, and quickly open projects from your workspace directories — with favorites, sorting, filtering, and usage tracking.",
+  "version": "0.1.0",
+  "publisher": "moers",
+  "license": "MIT",
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TODO/vscode-project-central"
+  },
+  "homepage": "https://github.com/TODO/vscode-project-central#readme",
+  "bugs": {
+    "url": "https://github.com/TODO/vscode-project-central/issues"
+  },
+  "galleryBanner": {
+    "color": "#1e1e2e",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "projects",
+    "browser",
+    "sidebar",
+    "workspace",
+    "manager",
+    "project-manager",
+    "folder",
+    "favorites",
+    "quick-open"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "projectCentral",
+          "title": "Project Central",
+          "icon": "resources/icons/activity-bar.svg"
+        }
+      ]
+    },
+    "views": {
+      "projectCentral": [
+        {
+          "id": "projectCentral.favorites",
+          "name": "Favorites",
+          "when": "projectCentral.hasFavorites"
+        },
+        {
+          "id": "projectCentral.projects",
+          "name": "Projects"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "projectCentral.projects",
+        "contents": "No root folders configured.\n[Add Root Folder](command:projectCentral.addRootFolder)\n\nConfigure root folders in settings to start browsing your projects.",
+        "when": "projectCentral.noRootFolders"
+      }
+    ],
+    "commands": [
+      {
+        "command": "projectCentral.quickOpen",
+        "title": "Quick Open Project",
+        "category": "Project Central",
+        "icon": "$(search)"
+      },
+      {
+        "command": "projectCentral.refresh",
+        "title": "Refresh Projects",
+        "category": "Project Central",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "projectCentral.toggleFavorite",
+        "title": "Toggle Favorite",
+        "category": "Project Central",
+        "icon": "$(star-empty)"
+      },
+      {
+        "command": "projectCentral.removeFavorite",
+        "title": "Remove from Favorites",
+        "category": "Project Central",
+        "icon": "$(star-full)"
+      },
+      {
+        "command": "projectCentral.sortBy",
+        "title": "Sort Projects By...",
+        "category": "Project Central",
+        "icon": "$(sort-precedence)"
+      },
+      {
+        "command": "projectCentral.filterByType",
+        "title": "Filter by Project Type...",
+        "category": "Project Central",
+        "icon": "$(filter)"
+      },
+      {
+        "command": "projectCentral.openNewWindow",
+        "title": "Open in New Window",
+        "category": "Project Central",
+        "icon": "$(empty-window)"
+      },
+      {
+        "command": "projectCentral.openCurrentWindow",
+        "title": "Open in Current Window",
+        "category": "Project Central"
+      },
+      {
+        "command": "projectCentral.addRootFolder",
+        "title": "Add Root Folder",
+        "category": "Project Central",
+        "icon": "$(add)"
+      },
+      {
+        "command": "projectCentral.openInTerminal",
+        "title": "Open in Terminal",
+        "category": "Project Central",
+        "icon": "$(terminal)"
+      },
+      {
+        "command": "projectCentral.copyPath",
+        "title": "Copy Path",
+        "category": "Project Central",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "projectCentral.revealInFinder",
+        "title": "Reveal in Finder / Explorer",
+        "category": "Project Central",
+        "icon": "$(folder-opened)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "projectCentral.quickOpen",
+          "when": "view == projectCentral.projects",
+          "group": "navigation@1"
+        },
+        {
+          "command": "projectCentral.sortBy",
+          "when": "view == projectCentral.projects",
+          "group": "navigation@2"
+        },
+        {
+          "command": "projectCentral.filterByType",
+          "when": "view == projectCentral.projects",
+          "group": "navigation@3"
+        },
+        {
+          "command": "projectCentral.refresh",
+          "when": "view == projectCentral.projects",
+          "group": "navigation@4"
+        },
+        {
+          "command": "projectCentral.refresh",
+          "when": "view == projectCentral.favorites",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "projectCentral.openNewWindow",
+          "when": "viewItem == project",
+          "group": "navigation@1"
+        },
+        {
+          "command": "projectCentral.openCurrentWindow",
+          "when": "viewItem == project",
+          "group": "navigation@2"
+        },
+        {
+          "command": "projectCentral.toggleFavorite",
+          "when": "viewItem == project",
+          "group": "favorites@1"
+        },
+        {
+          "command": "projectCentral.removeFavorite",
+          "when": "viewItem == favoriteProject",
+          "group": "favorites@1"
+        },
+        {
+          "command": "projectCentral.openInTerminal",
+          "when": "viewItem == project || viewItem == favoriteProject",
+          "group": "actions@1"
+        },
+        {
+          "command": "projectCentral.copyPath",
+          "when": "viewItem == project || viewItem == favoriteProject",
+          "group": "actions@2"
+        },
+        {
+          "command": "projectCentral.revealInFinder",
+          "when": "viewItem == project || viewItem == favoriteProject",
+          "group": "actions@3"
+        },
+        {
+          "command": "projectCentral.toggleFavorite",
+          "when": "viewItem == project",
+          "group": "inline"
+        },
+        {
+          "command": "projectCentral.removeFavorite",
+          "when": "viewItem == favoriteProject",
+          "group": "inline"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "projectCentral.quickOpen",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p"
+      }
+    ],
+    "configuration": {
+      "title": "Project Central",
+      "properties": {
+        "projectCentral.rootFolders": {
+          "type": "array",
+          "default": [],
+          "description": "Root folders to scan for projects.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Absolute path to the root folder."
+              },
+              "maxDepth": {
+                "type": "number",
+                "default": 1,
+                "description": "How deep to scan for projects (1 = direct children only)."
+              },
+              "projectTypes": {
+                "type": "array",
+                "default": [],
+                "description": "Filter by project type markers. Empty = detect all types.",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "git",
+                    "vscode",
+                    "idea",
+                    "node",
+                    "rust",
+                    "python",
+                    "go"
+                  ]
+                }
+              },
+              "label": {
+                "type": "string",
+                "description": "Optional display label for this root folder group."
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        "projectCentral.sortBy": {
+          "type": "string",
+          "default": "alphabet-asc",
+          "enum": [
+            "alphabet-asc",
+            "alphabet-desc",
+            "usage",
+            "last-opened"
+          ],
+          "enumDescriptions": [
+            "Alphabetical A → Z",
+            "Alphabetical Z → A",
+            "Most opened first",
+            "Recently opened first"
+          ],
+          "description": "How to sort projects in the sidebar."
+        },
+        "projectCentral.filterByType": {
+          "type": "array",
+          "default": [],
+          "description": "Show only projects of these types. Empty = show all.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "git",
+              "vscode",
+              "idea",
+              "node",
+              "rust",
+              "python",
+              "go"
+            ]
+          }
+        },
+        "projectCentral.showFavorites": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a dedicated Favorites section at the top."
+        },
+        "projectCentral.confirmOpenInCurrentWindow": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask for confirmation before opening a project in the current window."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify --sourcemap",
+    "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap --watch",
+    "typecheck": "tsc --noEmit",
+    "package": "vsce package",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.0"
+  }
+}
