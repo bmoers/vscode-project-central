@@ -4,6 +4,13 @@ All notable changes to the **Project Central** extension will be documented in t
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1](https://github.com/bmoers/vscode-project-central/compare/v1.0.0...v1.0.1) (2026-03-24)
+
+
+### Bug Fixes
+
+* integrate publish into release workflow ([17e1a37](https://github.com/bmoers/vscode-project-central/commit/17e1a3746aa2f66fa641bc5ecde93765e8517cce))
+
 ## 1.0.0 (2026-03-24)
 
 
