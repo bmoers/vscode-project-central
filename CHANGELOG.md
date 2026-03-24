@@ -4,6 +4,13 @@ All notable changes to the **Project Central** extension will be documented in t
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## 1.0.0 (2026-03-24)
+
+
+### Features
+
+* initial release with project browser, favorites, sorting and filtering ([b105a0f](https://github.com/bmoers/vscode-project-central/commit/b105a0f8285d6f97cb56ff7e3582c869f4005a99))
+
 ## [0.1.0] - 2026-03-24
 
 ### Added
