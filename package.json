@@ -2,7 +2,7 @@
   "name": "project-central",
   "displayName": "Project Central",
   "description": "Browse, organize, and quickly open projects from your workspace directories — with favorites, sorting, filtering, and usage tracking.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "moers",
   "license": "MIT",
   "icon": "resources/icon.png",
