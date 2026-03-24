@@ -113,7 +113,8 @@
       {
         "command": "projectCentral.openCurrentWindow",
         "title": "Open in Current Window",
-        "category": "Project Central"
+        "category": "Project Central",
+        "icon": "$(arrow-right)"
       },
       {
         "command": "projectCentral.addRootFolder",
@@ -205,14 +206,24 @@
           "group": "actions@3"
         },
         {
+          "command": "projectCentral.openCurrentWindow",
+          "when": "viewItem == project || viewItem == favoriteProject",
+          "group": "inline@1"
+        },
+        {
+          "command": "projectCentral.openNewWindow",
+          "when": "viewItem == project || viewItem == favoriteProject",
+          "group": "inline@2"
+        },
+        {
           "command": "projectCentral.toggleFavorite",
           "when": "viewItem == project",
-          "group": "inline"
+          "group": "inline@3"
         },
         {
           "command": "projectCentral.removeFavorite",
           "when": "viewItem == favoriteProject",
-          "group": "inline"
+          "group": "inline@3"
         }
       ]
     },
