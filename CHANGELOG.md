@@ -4,6 +4,13 @@ All notable changes to the **Project Central** extension will be documented in t
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.0](https://github.com/bmoers/vscode-project-central/compare/v1.0.1...v1.1.0) (2026-03-24)
+
+
+### Features
+
+* icon controls to open project ([22c13fb](https://github.com/bmoers/vscode-project-central/commit/22c13fb99d5c4f4f9dde5618beea44b68a1319c7))
+
 ## [1.0.1](https://github.com/bmoers/vscode-project-central/compare/v1.0.0...v1.0.1) (2026-03-24)
 
 
