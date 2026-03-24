@@ -8,11 +8,11 @@
   "icon": "resources/icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TODO/vscode-project-central"
+    "url": "https://github.com/bmoers/vscode-project-central"
   },
-  "homepage": "https://github.com/TODO/vscode-project-central#readme",
+  "homepage": "https://github.com/bmoers/vscode-project-central#readme",
   "bugs": {
-    "url": "https://github.com/TODO/vscode-project-central/issues"
+    "url": "https://github.com/bmoers/vscode-project-central/issues"
   },
   "galleryBanner": {
     "color": "#1e1e2e",
@@ -322,12 +322,16 @@
     "watch": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap --watch",
     "typecheck": "tsc --noEmit",
     "package": "vsce package",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@types/node": "^20.11.0",
     "@types/vscode": "^1.85.0",
     "esbuild": "^0.20.0",
+    "husky": "^9.1.7",
     "typescript": "^5.3.0"
   }
 }

@@ -20,15 +20,15 @@ Project Central scans one or more root directories, detects project types automa
 
 ### Detected Project Types
 
-| Type | Detected by |
-|------|-------------|
-| Git | `.git` directory |
-| VS Code | `.vscode` directory |
-| IntelliJ | `.idea` directory |
-| Node.js | `package.json` |
-| Rust | `Cargo.toml` |
-| Python | `pyproject.toml`, `setup.py`, or `requirements.txt` |
-| Go | `go.mod` |
+| Type     | Detected by                                         |
+| -------- | --------------------------------------------------- |
+| Git      | `.git` directory                                    |
+| VS Code  | `.vscode` directory                                 |
+| IntelliJ | `.idea` directory                                   |
+| Node.js  | `package.json`                                      |
+| Rust     | `Cargo.toml`                                        |
+| Python   | `pyproject.toml`, `setup.py`, or `requirements.txt` |
+| Go       | `go.mod`                                            |
 
 ---
 
@@ -74,10 +74,10 @@ All settings are stored in VSCode's `settings.json` and are also accessible via 
 
 ### Where Can I Edit Settings?
 
-| Method | How |
-|--------|-----|
-| **Settings UI** | `Cmd+,` (Mac) / `Ctrl+,` → Search for "Project Central" |
-| **settings.json (User)** | `Cmd+Shift+P` → `Preferences: Open User Settings (JSON)` |
+| Method                        | How                                                           |
+| ----------------------------- | ------------------------------------------------------------- |
+| **Settings UI**               | `Cmd+,` (Mac) / `Ctrl+,` → Search for "Project Central"       |
+| **settings.json (User)**      | `Cmd+Shift+P` → `Preferences: Open User Settings (JSON)`      |
 | **settings.json (Workspace)** | `Cmd+Shift+P` → `Preferences: Open Workspace Settings (JSON)` |
 
 > **User Settings** apply globally to all VSCode windows. **Workspace Settings** apply only to the current workspace and override User Settings.
@@ -91,12 +91,12 @@ All settings are stored in VSCode's `settings.json` and are also accessible via 
 
 The central setting. Defines which directories are scanned for projects. Each entry has the following properties:
 
-| Property | Type | Required | Default | Description |
-|----------|------|----------|---------|-------------|
-| `path` | `string` | Yes | — | Absolute path to the directory. Supports `~` as the home directory. |
-| `maxDepth` | `number` | No | `1` | How deep to scan. `1` = direct children only, `2` = also their subdirectories, etc. |
-| `projectTypes` | `string[]` | No | `[]` (all) | Only show projects of these types. Empty = detect all types. Possible values: `"git"`, `"vscode"`, `"idea"`, `"node"`, `"rust"`, `"python"`, `"go"` |
-| `label` | `string` | No | folder name | Display label for the group in the sidebar. If not set, the folder name is used. |
+| Property       | Type       | Required | Default     | Description                                                                                                                                         |
+| -------------- | ---------- | -------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `path`         | `string`   | Yes      | —           | Absolute path to the directory. Supports `~` as the home directory.                                                                                 |
+| `maxDepth`     | `number`   | No       | `1`         | How deep to scan. `1` = direct children only, `2` = also their subdirectories, etc.                                                                 |
+| `projectTypes` | `string[]` | No       | `[]` (all)  | Only show projects of these types. Empty = detect all types. Possible values: `"git"`, `"vscode"`, `"idea"`, `"node"`, `"rust"`, `"python"`, `"go"` |
+| `label`        | `string`   | No       | folder name | Display label for the group in the sidebar. If not set, the folder name is used.                                                                    |
 
 #### Examples
 
@@ -154,12 +154,12 @@ The central setting. Defines which directories are scanned for projects. Each en
 
 Determines the sort order of projects in the sidebar.
 
-| Value | Description |
-|-------|-------------|
-| `"alphabet-asc"` | Alphabetical A → Z |
-| `"alphabet-desc"` | Alphabetical Z → A |
-| `"usage"` | Most opened projects first. Projects you use frequently appear at the top. Ties are broken alphabetically. |
-| `"last-opened"` | Recently opened projects first. The project you opened most recently appears at the top. |
+| Value             | Description                                                                                                |
+| ----------------- | ---------------------------------------------------------------------------------------------------------- |
+| `"alphabet-asc"`  | Alphabetical A → Z                                                                                         |
+| `"alphabet-desc"` | Alphabetical Z → A                                                                                         |
+| `"usage"`         | Most opened projects first. Projects you use frequently appear at the top. Ties are broken alphabetically. |
+| `"last-opened"`   | Recently opened projects first. The project you opened most recently appears at the top.                   |
 
 #### How to Change
 
@@ -257,28 +257,28 @@ Set to `false` if you don't need the confirmation and want to open projects dire
 
 All commands are accessible via the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`). Type "Project Central" to find them.
 
-| Command | Description | Available in |
-|---------|-------------|--------------|
-| **Quick Open Project** | Opens a fuzzy-search dropdown with all projects. Favorites appear first. | Command Palette, Keybinding `Cmd+Alt+P` |
-| **Refresh Projects** | Re-scans all root folders. Also happens automatically on config changes. | Command Palette, Sidebar Toolbar |
-| **Toggle Favorite** | Stars/unstars a project as favorite. | Right-click on project, Inline button (star) |
-| **Remove from Favorites** | Removes a project from favorites. | Right-click in Favorites view |
-| **Sort Projects By...** | Opens a QuickPick with sort options. | Command Palette, Sidebar Toolbar |
-| **Filter by Project Type...** | Opens a multi-select with project types. | Command Palette, Sidebar Toolbar |
-| **Open in New Window** | Opens the project in a new VSCode window. | Right-click, Single-click on project |
-| **Open in Current Window** | Opens the project in the current window (with optional confirmation). | Right-click on project |
-| **Add Root Folder** | Opens a folder dialog to add a new root folder. | Command Palette, Welcome view |
-| **Open in Terminal** | Opens a new terminal in the project directory. | Right-click on project |
-| **Copy Path** | Copies the absolute project path to the clipboard. | Right-click on project |
-| **Reveal in Finder / Explorer** | Opens the project folder in the OS file manager. | Right-click on project |
+| Command                         | Description                                                              | Available in                                 |
+| ------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------- |
+| **Quick Open Project**          | Opens a fuzzy-search dropdown with all projects. Favorites appear first. | Command Palette, Keybinding `Cmd+Alt+P`      |
+| **Refresh Projects**            | Re-scans all root folders. Also happens automatically on config changes. | Command Palette, Sidebar Toolbar             |
+| **Toggle Favorite**             | Stars/unstars a project as favorite.                                     | Right-click on project, Inline button (star) |
+| **Remove from Favorites**       | Removes a project from favorites.                                        | Right-click in Favorites view                |
+| **Sort Projects By...**         | Opens a QuickPick with sort options.                                     | Command Palette, Sidebar Toolbar             |
+| **Filter by Project Type...**   | Opens a multi-select with project types.                                 | Command Palette, Sidebar Toolbar             |
+| **Open in New Window**          | Opens the project in a new VSCode window.                                | Right-click, Single-click on project         |
+| **Open in Current Window**      | Opens the project in the current window (with optional confirmation).    | Right-click on project                       |
+| **Add Root Folder**             | Opens a folder dialog to add a new root folder.                          | Command Palette, Welcome view                |
+| **Open in Terminal**            | Opens a new terminal in the project directory.                           | Right-click on project                       |
+| **Copy Path**                   | Copies the absolute project path to the clipboard.                       | Right-click on project                       |
+| **Reveal in Finder / Explorer** | Opens the project folder in the OS file manager.                         | Right-click on project                       |
 
 ---
 
 ## Keyboard Shortcuts
 
-| Action | Mac | Windows / Linux |
-|--------|-----|-----------------|
-| Quick Open Project | `Cmd+Alt+P` | `Ctrl+Alt+P` |
+| Action             | Mac         | Windows / Linux |
+| ------------------ | ----------- | --------------- |
+| Quick Open Project | `Cmd+Alt+P` | `Ctrl+Alt+P`    |
 
 To customize the shortcut: `Cmd+K Cmd+S` → Search for "Project Central Quick Open" → Assign a new shortcut.
 
@@ -286,11 +286,11 @@ To customize the shortcut: `Cmd+K Cmd+S` → Search for "Project Central Quick O
 
 ## Data Storage
 
-| Data | Stored in | Persistence |
-|------|-----------|-------------|
-| Root Folders, Sort, Filter | `settings.json` (User or Workspace) | Editable via Settings UI / JSON |
-| Favorites | VSCode `globalState` | Automatic, survives updates and reinstalls |
-| Usage Data (Open Count, Last Opened) | VSCode `globalState` | Automatic, survives updates and reinstalls |
+| Data                                 | Stored in                           | Persistence                                |
+| ------------------------------------ | ----------------------------------- | ------------------------------------------ |
+| Root Folders, Sort, Filter           | `settings.json` (User or Workspace) | Editable via Settings UI / JSON            |
+| Favorites                            | VSCode `globalState`                | Automatic, survives updates and reinstalls |
+| Usage Data (Open Count, Last Opened) | VSCode `globalState`                | Automatic, survives updates and reinstalls |
 
 > `globalState` is VSCode's internal key-value store per extension. The data lives in your VSCode profile and is not written to files you can edit directly.
 
@@ -351,9 +351,57 @@ npm run compile
 # Watch mode (auto-compile on changes)
 npm run watch
 
+# Type check
+npm run typecheck
+
 # Test the extension: Press F5 in VSCode
 # → Launches the Extension Development Host
 ```
+
+### Commit Convention
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/). Commit messages are validated automatically via [commitlint](https://commitlint.js.org/) + [husky](https://typicode.github.io/husky/).
+
+| Prefix                         | Purpose                      | Version Bump  |
+| ------------------------------ | ---------------------------- | ------------- |
+| `feat:`                        | New feature                  | Minor (0.x.0) |
+| `fix:`                         | Bug fix                      | Patch (0.0.x) |
+| `docs:`                        | Documentation only           | —             |
+| `chore:`                       | Maintenance, deps, CI        | —             |
+| `refactor:`                    | Code change (no feature/fix) | —             |
+| `feat!:` or `BREAKING CHANGE:` | Breaking change              | Major (x.0.0) |
+
+Example:
+
+```text
+feat: add project type detection for Dart
+fix: scanner ignoring symlinked directories
+chore: update esbuild to v0.21
+```
+
+### Release Workflow
+
+Releases are fully automated via GitHub Actions:
+
+1. **Push to `main`** with conventional commits
+2. **Release Please** automatically creates/updates a Release PR with:
+   - Version bump in `package.json` (based on commit types)
+   - Updated `CHANGELOG.md`
+3. **Merge the Release PR** → GitHub Release is created
+4. **Publish workflow** triggers and publishes to the VS Code Marketplace
+
+#### VS-Code Publisher Setup
+
+1. **Create a Publisher** at [marketplace.visualstudio.com/manage](https://marketplace.visualstudio.com/manage) — the Publisher ID must match `"publisher"` in `package.json` (currently `"moers"`)
+2. **Create a PAT** at [Azure DevOps](https://dev.azure.com) → User Settings → Personal Access Tokens:
+   - Organization: **All accessible organizations** (important!)
+   - Scopes: Custom defined → Marketplace → **Manage**
+3. **Add GitHub Secrets** in the repo → Settings → Secrets and variables → Actions:
+
+| Secret     | Value                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------- |
+| `VSCE_PAT` | Your Azure DevOps PAT from step 2                                                      |
+| `OVSX_PAT` | [Open VSX](https://open-vsx.org/) access token (optional, for open-source marketplace) |
 
 ---
 
